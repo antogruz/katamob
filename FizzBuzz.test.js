@@ -1,4 +1,8 @@
 function fizzbuzz(input) {
+    if (input % 15 === 0) {
+        return "FizzBuzz";
+    }
+
     if (input % 3 === 0) {
         return "Fizz";
     }
@@ -33,6 +37,12 @@ describe("fizzbuzz", function () {
     describe("should return Buzz when number is a multiple of 5", function () {
         it("with 5", function () {
             expect(fizzbuzz(5)).toBe("Buzz");
+        });
+    });
+
+    describe("should return FizzBuzz when number is a multiple of 15", function () {
+        it("with 15", function () {
+            expect(fizzbuzz(15)).toBe("FizzBuzz");
         });
     });
 });
